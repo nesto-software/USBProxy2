@@ -1,0 +1,16 @@
+Script started on 2021-05-28 20:21:33+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="172" LINES="13"]
+[37;1mINFO    | [0m[1m__init__    |[0m Building and uploading gateware to attached LUNA r0.4...
+[37;1mINFO    | [0m[1m__init__    |[0m Upload complete.
+[37;1mINFO    | [0m[1mselftest    |[0m Connected to onboard debugger; hardware revision r0.4 (s/n: 9053d4806474151502020203333051ff).
+[37;1mINFO    | [0m[1mselftest    |[0m Running tests...
+[0m[?7h[0m
+
+[0;1;4mAutomated tests:[0m
+[0m[0m[?7h[0m	Debug module:	[0;38;5;28m✓ PASSED[0m
+[0m[0m[?7h[0m	Host PHY:	[0;38;5;196m✗ FAILED[0m	(PHY scratch register read-back was 65, not expected 0)
+[0m[0m[?7h[0m	HyperRAM:	[0;38;5;196m✗ FAILED[0m	(RAM register 0 was 0, not one of expected (3201, 3206))
+[0m[0m[?7h[0m	Sideband PHY:	[0;38;5;196m✗ FAILED[0m	(PHY scratch register read-back was 65, not expected 255)
+[0m[0m[?7h[0m	Target PHY:	[0;38;5;196m✗ FAILED[0m	(PHY scratch register read-back was 65, not expected 0)
+[0m
+
+Script done on 2021-05-28 20:21:46+00:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,6 @@
+[ 1756.790930] usb usb1-port1: Cannot enable. Maybe the USB cable is bad?
+[ 1757.742873] usb usb1-port1: Cannot enable. Maybe the USB cable is bad?
+[ 1757.742973] usb usb1-port1: attempt power cycle
+[ 1759.006820] usb usb1-port1: Cannot enable. Maybe the USB cable is bad?
+[ 1759.958667] usb usb1-port1: Cannot enable. Maybe the USB cable is bad?
+[ 1759.958724] usb usb1-port1: unable to enumerate USB device
