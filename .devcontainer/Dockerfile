@@ -75,10 +75,6 @@ RUN apt-get install -y python3-pip gtkwave
 # install
 RUN pip3 install --upgrade nmigen
 
-
-# install apollo-fpga package 
-RUN pip install apollo-fpga
-
 # install user shell config
 RUN echo "#!/bin/sh\npython3 -m viewsb.commands.viewsb \$@" > /home/vscode/viewsb.sh && chmod +x /home/vscode/viewsb.sh
 RUN echo 'alias viewsb="sudo /home/vscode/viewsb.sh"' >> /home/vscode/.bashrc
@@ -86,3 +82,22 @@ RUN echo 'alias viewsb="sudo /home/vscode/viewsb.sh"' >> /home/vscode/.bashrc
 # patch luna code
 RUN git config --global user.name "Nesto" && git config --global user.email "nesto@example.com"
 RUN cd /tmp/luna && git checkout -b nesto && git remote add twam https://github.com/twam/luna/ && git fetch twam && GIT_MERGE_AUTOEDIT=no git merge twam/bugfix/116 nesto
+
+# greatfet:
+# prerequisites:
+RUN apt install -y python-usb python-setuptools dfu-util gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib liblzma5
+RUN pip install PyYAML
+
+# build and install:
+RUN git clone https://github.com/greatscottgadgets/greatfet.git /tmp/greatfet
+RUN cd /tmp/greatfet && git checkout a21c30e2653a453cae6c545adf14f786492c61f6 \
+    && git submodule update --init \
+    && cd libgreat/host/ \
+    && python setup.py build \
+    && $(which python) setup.py install \
+    && cd ../.. \
+    && cd host/ \
+    && python setup.py build \
+    && $(which python) setup.py install \
+    && cd .. \
+    && make firmware
