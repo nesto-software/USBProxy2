@@ -1,4 +1,4 @@
-USB Proxy v2 [powered by LUNA] for Raspberry Pi (armhf)   
+USB Proxy v2 [LUNA Edition] for Raspberry Pi (armhf)   
 ========
 
 <p align="center">
