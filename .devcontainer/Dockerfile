@@ -101,3 +101,8 @@ RUN cd /tmp/greatfet && git checkout a21c30e2653a453cae6c545adf14f786492c61f6 \
     && $(which python) setup.py install \
     && cd .. \
     && make firmware
+
+# compile mossmann selftests
+# RUN apt-get -y install autoconf automake autotools-dev curl python3 libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev
+# RUN git clone https://github.com/riscv/riscv-gnu-toolchain /tmp/riscv-gnu-toolchain
+# RUN cd /tmp/riscv-gnu-toolchain && ./configure --prefix=/opt/riscv && make linux
