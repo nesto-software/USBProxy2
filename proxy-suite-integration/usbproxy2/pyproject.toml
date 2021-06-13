@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "usbproxy2"
+version = "0.1.0"
+description = "Forwards usb data from the LUNA USB Analyzer to another application using ZMQ"
+authors = ["Martin Löper <martin.loeper@gmx.de>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+luna = { git = "https://github.com/greatscottgadgets/luna.git", rev = "5d983e1ed82f6a7f14a0509ba9541a0c72c43f7f" }
+jinja2 = "*"
+construct = "*"
+#viewsb = { git = "https://github.com/usb-tools/ViewSB.git", rev = "37516d649611adff9d739303c5a2a182ea0e32ac" }
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
